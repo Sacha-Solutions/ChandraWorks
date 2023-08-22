@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Chandra.Works</title>
+    
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+</head>
+<body>
+  
+    <!-- <button id="open-popup">Open Popup</button> -->
+  
+    <div id="popup-container">
+      <div class="popup">
+        <button id="close-popup">&times;</button>
+        <div class="popup-content">
+          <div class="left-section">
+            <div class="left-side">
+              
+                <p id="Clogo">C.</p> 
+                <h5>Explore your industry and available opportunities.</h2>
+               
+              <ul>
+                <li>Explore your industry and available opportunities.</li>
+                <li>Explore your industry and available opportunities.</li>
+                <li>Explore your industry and available opportunities.</li>
+                <li>Explore your industry and available opportunities.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="right-section">
+            <!-- Right Section Content -->
+            
+            <div id="main">
+              <p id="chandraworksp">Log in to chandra.works</p>
+              <br/> 
+              <div class="single-input">
+                <span><i class="fas fa-user"></i></span>
+                <input id="email-signup" type="text" placeholder="Email" required maxlength="50">
+              </div>
+  
+              
+              <button id="create-acct-btn">Continue with Email</button>
+              <div class="other">
+                <p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Or &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+  
+               
+                <div class="icons">
+                  <a href="#" id="microsoft-logo" class="buttonmsandgl">
+                    <img  style="background-color: white;border-radius: inherit;" height="30px" width="30px" src="https://icons8.com/vue-static/landings/app/tabs/icon-windows.png" alt="microsoft-logo" />
+                    <span style="margin-left: 40px;">Continue with Microsoft</span>
+                  </a>
+                  <a href="#" id="Googlelogo" class="buttonmsandgl">
+                    <img style="background-color: white;border-radius: inherit;" height="30px" width="30px" src="https://icons8.com/vue-static/landings/app/tabs/icon-google.png" alt="google-logo" />
+                    <span style="margin-left: 40px;">Continue with Google</span>
+                  </a>
+                 
+                </div>
+         
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+      <nav>
+        <div class="navbar">
+          <div class="logo">Chandra.Works</div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">OP</a></li>
+          </ul>
+          <a id="signinurl" class="open-popup" style="margin-right: 200px;" href="#">Sign In</a>
+        
+      </nav>
+    
+  
+    <div class="row sectionBlockLayout text-left" style="background-color: #dbe1f9;">
+      <div class="container">
+        <div class="col-md-12 columnBlockLayout">
+          <h2>C.</h2>
+          <h2 class="subheading">Globally distributed execution of engineering packages.</h2>
+          <div class="row sectionBlockLayout"></div>
+          <p class="smallText">chadra.works enables engineering companies to manage their work packages, all in one place, with full control, even when the execution is globally distributed.</p>
+          <div class="row sectionBlockLayout"></div>
+  
+          <div style="text-align: center;">
+            <a id="buttonokprimaryButton" class="open-popup">Sign In</a>
+            <button class="button secondaryButton">Explore your industry</button>
+          </div>
+  
+          <div class="row sectionBlockLayout"></div>
+          <div style="text-align: center;">
+             
+              <a class="open-popup" style="color:#4351e7;text-decoration: none;" href="#">Sign up to see the current opportunities available ></a>
+           
+          </div>
+          
+          <div class="row sectionBlockLayout"></div>
+          <div class="tabs">
+            <div class="tab active" onclick="showContent(0)">For Customers</div>
+            <div class="tab" onclick="showContent(1)">For Suppliers</div>
+          </div>
+  
+          <div class="content active" id="content0">
+            <h2>Customers Panel</h2>
+            <p>This is the content of Customers Panel.</p>
+          </div>
+  
+          <div class="content" id="content1">
+            <h2>Suppliers Panel</h2>
+            <p>This is the content of Suppliers Panel.</p>
+          </div>
+        </div> 
+       
+      </div>
+     
+    
+   </div>  <p>Copyright © 2023 . All rights reserved.</p>
+   
+  
+    <script>
+      function showContent(index) {
+        // Hide all content sections
+        var contentSections = document.getElementsByClassName("content");
+        for (var i = 0; i < contentSections.length; i++) {
+          contentSections[i].style.display = "none";
+        }
+  
+        // Show the selected content section
+        var selectedContent = document.getElementById("content" + index);
+        selectedContent.style.display = "block";
+  
+        // Update active tab
+        var tabs = document.getElementsByClassName("tab");
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove("active");
+        }
+  
+        tabs[index].classList.add("active");
+      }
+  
+      const openPopupButton = document.getElementsByClassName('open-popup');
+  const closePopupButton = document.getElementById('close-popup');
+  const popupContainer = document.getElementById('popup-container');
+  
+  
+  for (const box of openPopupButton) {
+    box.addEventListener('click', function onClick() {
+      popupContainer.style.display = 'block';
+       
+    });
+  }
+  
+  closePopupButton.addEventListener('click', () => {
+    // Hide the popup
+    popupContainer.style.display = 'none';
+  });
+  
+  document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      var isEscape = false;
+      if ("key" in evt) {
+          isEscape = (evt.key === "Escape" || evt.key === "Esc");
+      } else {
+          isEscape = (evt.keyCode === 27);
+      }
+      if (isEscape) {
+        popupContainer.style.display = 'none';
+         
+      }
+  };
+    </script>
+    
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script type = "module" src = "script.js"></script>
+      
+      <!-- <script type = "module" src = "script.js"></script> -->
+  
+  </body>
+</html>
