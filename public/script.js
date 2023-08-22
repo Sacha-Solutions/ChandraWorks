@@ -63,7 +63,7 @@ createacctbtn.addEventListener("click",async function() {
 
   if(isVerified) {
 
-    fetch('http://localhost:3000/results').then(response => {return response.json()}).then((data)=>{data
+    fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
     var findemail = []
     var findemail = data.filter((emailcheck)=>{return emailcheck.mail == signupEmail})
     if(findemail.length)
@@ -116,7 +116,7 @@ microsoftlogo.addEventListener("click", function() {
     )
 
 
-    fetch('http://localhost:3000/results').then(response => {return response.json()}).then((data)=>{data
+    fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
     var findemail = []
     var findemail = data.filter((emailcheck)=>{return emailcheck.mail == result.user.email})
     if(findemail.length)
@@ -164,7 +164,7 @@ Googlelogo.addEventListener("click", function() {
         result.user.displayName
       )
 
-      fetch('http://localhost:3000/results').then(response => {return response.json()}).then((data)=>{data
+      fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
       var findemail = []
       var findemail = data.filter((emailcheck)=>{return emailcheck.mail == result.user.email})
       if(findemail.length)
