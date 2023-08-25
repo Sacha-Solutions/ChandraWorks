@@ -8,7 +8,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 import { getAuth, GoogleAuthProvider ,createUserWithEmailAndPassword, OAuthProvider, signInWithPopup  } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { sendEmail } from "./Email.js";
  
-
+const production = "https://chandraworks.onrender.com"
+const dev = "http://localhost:3000"
 
 const firebaseConfig = {
   apiKey: "AIzaSyCjsw6ocOJcfzeJ6LCDEUWv6U9uC7Xl17o",
@@ -23,11 +24,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-
-// const signupButton = document.getElementById("sign-up");
-
-// const main = document.getElementById("main");
-// const createacct = document.getElementById("create-acct")
 
 const signupEmailIn = document.getElementById("email-signup");
 
@@ -63,7 +59,7 @@ createacctbtn.addEventListener("click",async function() {
 
   if(isVerified) {
 
-    fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
+    fetch(`${production}/results`).then(response => {return response.json()}).then((data)=>{data
     var findemail = []
     var findemail = data.filter((emailcheck)=>{return emailcheck.mail == signupEmail})
     if(findemail.length)
@@ -113,10 +109,10 @@ microsoftlogo.addEventListener("click", function() {
     redata.push(
        result.user.email,
       result.user.displayName
-    )
+    );
 
 
-    fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
+    fetch(`${production}/results`).then(response => {return response.json()}).then((data)=>{data
     var findemail = []
     var findemail = data.filter((emailcheck)=>{return emailcheck.mail == result.user.email})
     if(findemail.length)
@@ -164,7 +160,7 @@ Googlelogo.addEventListener("click", function() {
         result.user.displayName
       )
 
-      fetch('https://chandraworks.onrender.com/results').then(response => {return response.json()}).then((data)=>{data
+      fetch(`${production}/results`).then(response => {return response.json()}).then((data)=>{data
       var findemail = []
       var findemail = data.filter((emailcheck)=>{return emailcheck.mail == result.user.email})
       if(findemail.length)

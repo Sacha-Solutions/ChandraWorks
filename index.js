@@ -2,13 +2,13 @@
 const express = require('express');
 const app = express();
 const APP_ID = '050e146b-4f4a-46df-95ad-8d068d3dd653';
-const APP_SECERET = 'ik_8Q~RhyrRRCcQyHNvIO8h7ObU~8IHMHNjaucex';
+const APP_SECERET = 'VC78Q~-.pn6HnSU~utS2pjL8DmeWGqCbdK1AQarN';
 const TOKEN_ENDPOINT ='https://login.microsoftonline.com/8348fff7-e900-434d-b232-295abc2d42a7/oauth2/v2.0/token';
 const MS_GRAPH_SCOPE = 'https://graph.microsoft.com/.default';
 const axios = require('axios');
 const qs = require('qs');
 var accessToken ='';
-var apiUrl = '';
+
 port = process.env.PORT || 3000;
  
 app.use(express.static('public'));
