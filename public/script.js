@@ -50,7 +50,7 @@ createacctbtn.addEventListener("click",async function() {
     isVerified = false;
   }
   
-  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(signupEmail))
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(signupEmail))
   {
     swal("Error", "Enter a valid email address.", "error")
     // window.alert("Enter a valid email address.");
@@ -78,13 +78,15 @@ createacctbtn.addEventListener("click",async function() {
       sendEmail(redata);
       console.log(userCredential.user.email);
       swal("You did it!", "We are setting up your account. A link to login will be shared to your email with in few minutes.", "success");    
-   
-      signupEmailIn.value = "";
-       // Hide the popup
-       popupContainer.style.display = 'none';
-      
-       signupEmailIn.value = "";
-    }).catch((error) => {
+     
+        signupEmailIn.value = "";
+         // Hide the popup
+         popupContainer.style.display = 'none';
+        
+         signupEmailIn.value = "";
+    
+
+       }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
@@ -122,24 +124,24 @@ microsoftlogo.addEventListener("click", function() {
     }
     else
     {
-      sendEmail(redata);
-      // console.log(userCredential.user.email);
-      // console.log(result.additionalUserInfo.profile);
-      swal("You did it!", "We are setting up your account. A link to login will be shared to your email with in few minutes.", "success");    
+
+      sendEmail(redata)
+        console.log(userCredential.user.email);
+        swal("You did it!", "We are setting up your account. A link to login will be shared to your email with in few minutes.", "success");    
    
-      signupEmailIn.value = "";
-       // Hide the popup
-       popupContainer.style.display = 'none';
+   
+        signupEmailIn.value = "";
+         // Hide the popup
+         popupContainer.style.display = 'none';
+        
+         signupEmailIn.value = "";
+     
       
     }
   });
-     
-
     })
     .catch((error) => {
       swal("Error:", error.message, "error"); 
-
-
     });
 });
  
@@ -167,14 +169,19 @@ Googlelogo.addEventListener("click", function() {
       {
         swal("Note:", "The email address " +  result.user.email +" is already registred with us! You will shortly receive an email with a link to login.", "info"); 
       }else{
-        sendEmail(redata);
-        // console.log(userCredential.user.email);
-        // console.log(result.additionalUserInfo.profile);
-        swal("You did it!", "We are setting up your account. A link to login will be shared to your email with in few minutes.", "success");    
+
+        sendEmail(redata)
+          console.log(userCredential.user.email);
+          swal("You did it!", "We are setting up your account. A link to login will be shared to your email with in few minutes.", "success");    
      
-        signupEmailIn.value = "";
-         // Hide the popup
-         popupContainer.style.display = 'none';
+     
+          signupEmailIn.value = "";
+           // Hide the popup
+           popupContainer.style.display = 'none';
+          
+           signupEmailIn.value = "";
+       
+          
       }
     });
  
